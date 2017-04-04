@@ -1,0 +1,22 @@
+<div class="container container-default">
+  <h1>
+    {{title}}
+  </h1>
+  <div class="row">
+    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5">
+      <a (click)="hideContactSlideout=false">Open Contact Slideout</a><br/>
+      <a (click)="hideAddressSlideout=false">Open Address Slideout</a>    
+    </div>
+    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5">
+      <app-slideout [hidden]="hideAddressSlideout" 
+        [title]="'Address'" (closeEvent)="hideAddressSlideout=true">
+        <app-addressform></app-addressform>
+      </app-slideout>
+
+      <app-slideout [hidden]="hideContactSlideout"
+        [title]="'Contact'" (closeEvent)="hideContactSlideout=true">
+        <app-contactform></app-contactform>
+      </app-slideout>
+  </div>
+</div>
+</div>
